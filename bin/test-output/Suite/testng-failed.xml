@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.ahnlab.setup.RetryListener"/>
+  </listeners>
+  <test parallel="tests" name="Test1(failed)">
+    <parameter name="app" value=""/>
+    <parameter name="appPackage" value="com.ahnlab.v3mobilesecurity.soda"/>
+    <parameter name="noReset" value="true"/>
+    <parameter name="elementScreenshotImgFIlePath" value="./img/textImg/"/>
+    <parameter name="fullScrennshotImgFilePath" value="./img/elementImg/"/>
+    <parameter name="appiumServer" value="http://0.0.0.0:4723/wd/hub"/>
+    <parameter name="deviceName" value="Samsung Galaxy S7"/>
+    <parameter name="testcase" value="./TestScripts/test.robot"/>
+    <parameter name="appActivity" value="com.ahnlab.v3mobilesecurity.main.DummyMain"/>
+    <parameter name="newCommandTimeout" value="120"/>
+    <parameter name="platformVersion" value="7.0"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="udid" value="ce021602cc9d774002"/>
+    <classes>
+      <class name="com.ahnlab.setup.AndroidSetup">
+        <methods>
+          <include name="setUp"/>
+          <include name="testMethod" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ahnlab.setup.AndroidSetup -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [Suite] -->

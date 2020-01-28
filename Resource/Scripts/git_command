@@ -1,0 +1,12 @@
+# PUll Source Code 
+git pull http://10.2.10.31/SQA/mobile_m-blia.git
+
+# Commit Message 
+git init
+git add .
+git commit -m "Commit Message"
+git push -u origin master
+   
+# ignore 처리 해제
+git rm -r -f <file path>
+abcde

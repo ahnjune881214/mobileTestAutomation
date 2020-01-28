@@ -1,0 +1,1 @@
+{"uuid":"2178f042-8489-4c3a-90bb-2aae6f38996f","name":"com.ahnlab.testcase.Testcase2","children":["997fc2c4-f01a-420d-b3ef-a9f524f15e1f"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1563861747472,"stop":1563861760293}],"afters":[],"links":[],"start":1563861709827,"stop":1563861789638}

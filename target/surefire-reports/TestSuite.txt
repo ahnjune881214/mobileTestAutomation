@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 2, Errors: 0, Skipped: 4, Time elapsed: 80.698 s <<< FAILURE! - in TestSuite
+setUp(com.ahnlab.testcase.Testcase)  Time elapsed: 80.298 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Unable to create a new remote session. Original error: unexpected end of stream on Connection{127.0.0.1:4444, proxy=DIRECT hostAddress=/127.0.0.1:4444 cipherSuite=none protocol=http/1.1}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'juneahn.local', ip: 'fe80:0:0:0:1066:3426:d5fd:547b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: AndroidDriver
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.io.IOException: unexpected end of stream on Connection{127.0.0.1:4444, proxy=DIRECT hostAddress=/127.0.0.1:4444 cipherSuite=none protocol=http/1.1}
+Caused by: java.io.EOFException: \n not found: limit=0 content=…
+
+setUp(com.ahnlab.testcase.Testcase2)  Time elapsed: 80.299 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
+Unable to create a new remote session. Original error: unexpected end of stream on Connection{127.0.0.1:4444, proxy=DIRECT hostAddress=/127.0.0.1:4444 cipherSuite=none protocol=http/1.1}
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'juneahn.local', ip: 'fe80:0:0:0:1066:3426:d5fd:547b%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.14.6', java.version: '1.8.0_221'
+Driver info: driver.version: AndroidDriver
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.io.IOException: unexpected end of stream on Connection{127.0.0.1:4444, proxy=DIRECT hostAddress=/127.0.0.1:4444 cipherSuite=none protocol=http/1.1}
+Caused by: java.io.EOFException: \n not found: limit=0 content=…
+

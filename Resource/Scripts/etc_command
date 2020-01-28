@@ -1,0 +1,16 @@
+# Appium Start cmd
+start /b appium -a 127.0.0.1 -p 4723 --local-timezone --session-override --log-timestamp -bp 100 --selendroid-port 8080
+start /b appium -a 127.0.0.1 -p 4725 --local-timezone --session-override --log-timestamp -bp 200 --selendroid-port 8080
+
+# TestNG Mavne cmd
+mvn clean test -DsuiteXmlFile=Testng.xml
+
+#Allure 
+allure serve C:\MIT\MobileTestAutomation\ahnlab\target\allure-results
+
+
+# Window timeout
+timeout 5
+
+# Grid Start (remove command)
+appium C:\MT\MobileTestAutomation\mit\lib\selenium-server-standalone-3.12.0.jar -role hub

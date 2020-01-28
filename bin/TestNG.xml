@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Suite" parallel="tests" thread-count="5">
+  	<test name="Test1">
+  		<!-- Device Capabilities -->
+  		<parameter name="platformName" value="Android"/>
+  		<parameter name="platformVersion" value="7.0"/>
+  		<parameter name="deviceName" value="Samsung Galaxy S7"/>
+  		<parameter name="udid" value="ce021602cc9d774002"/>
+  		<parameter name="app" value=""></parameter>
+  		<parameter name="appPackage" value="com.ahnlab.v3mobilesecurity.soda"/>
+  		<parameter name="appActivity" value="com.ahnlab.v3mobilesecurity.main.DummyMain"/>
+  		<parameter name="appiumServer" value="http://0.0.0.0:4723/wd/hub"/>
+  		<parameter name="newCommandTimeout" value="120"/>
+  		<parameter name="noReset" value="true"/>
+
+		<!-- Choice TestCases -->
+		<parameter name="testcase" value="./TestScripts/test.robot"/>
+  		
+  		<!-- Save image file path -->
+  		<parameter name="fullScrennshotImgFilePath" value="./img/elementImg/"/>
+  		<parameter name="elementScreenshotImgFIlePath" value="./img/textImg/"/>
+  		
+		<classes>
+			<class name="com.ahnlab.setup.AndroidSetup"/>
+		</classes>
+		
+	</test>
+	
+    <listeners>
+       	<listener class-name="com.ahnlab.setup.RetryListener" /> 
+   	</listeners>
+</suite>
+
+
+ 

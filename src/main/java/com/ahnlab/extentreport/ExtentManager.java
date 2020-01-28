@@ -1,0 +1,122 @@
+package com.ahnlab.extentreport;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
+public class ExtentManager {
+	private static ExtentReports extent;
+	private static ExtentHtmlReporter htmlReporter;
+	private static String filePath = "./Resource/Report/extentreport.html";
+
+	
+	public static ExtentReports GetExtent() {
+		if (extent != null)
+			return extent;
+		extent = new ExtentReports();
+		extent.setSystemInfo("111", "aaa");
+		extent.setSystemInfo("testcase", "aaa \n test\n");
+		extent.setTestRunnerOutput("123123123123aaaaaa");
+		extent.setTestRunnerOutput("123123123123aaaaaa");
+		extent.setTestRunnerOutput("123123123123aaaaaa");
+		extent.setTestRunnerOutput("123123123123aaaaaa");
+		extent.setTestRunnerOutput("123123123123aaaaaa");
+
+		extent.attachReporter(getHtmlReporter());
+		return extent;
+
+	}
+
+	private static ExtentHtmlReporter getHtmlReporter() {
+		htmlReporter = new ExtentHtmlReporter(filePath);
+		htmlReporter.loadXMLConfig("./Resource/Report/extent-config.xml");
+		return htmlReporter;
+	}
+	
+	public static void main(String[] args) throws Exception{
+		test1();
+		test2();
+		
+	}
+	
+	public static void test1() throws Exception {
+		extent = ExtentManager.GetExtent();
+		ExtentTest report = extent.createTest("TestCase1");
+		
+		String img1 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/5023a6e799c54a00b257ed033cc22ae0.png";
+		String img2 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/54129663b0e04a6ea1011e70969d68e6.png";
+		String img3 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/10280a0cff8a43e890108bf56c696981.png";
+		String img4 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/cf65e44a44444a56b0c06d62cd8f0091.png";
+		String img5 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/64302820928a4a5296acaaf7abc0d99f.png";
+		String test = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/0322bfe7d5f34d7ca4b26e5d780f433a.png";
+		
+		report.pass("[Touch] 권한 허용하기 <br/> "
+				+ "<img src=\"" + test + "\" width=\"25%\" height=\"25%\">");
+		report.pass("[Touch] 허용", MediaEntityBuilder.createScreenCaptureFromPath(img2).build());
+		report.pass("[Touch] ", MediaEntityBuilder.createScreenCaptureFromPath(img3).build());
+		report.pass("[Touch] 다음", MediaEntityBuilder.createScreenCaptureFromPath(img4).build());
+		report.pass("[Touch] 불필요한 앱 (선택 권장)", MediaEntityBuilder.createScreenCaptureFromPath(img5).build());
+		
+		report.log(Status.FAIL, "123123</br> aaa </br> bbb");
+		
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.RED));
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.BLACK));
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.GREEN));
+		
+		String[][] arr = {{"1","2"}, {"3","4"},{"5","6"}};
+		report.log(Status.FAIL, MarkupHelper.createTable(arr));
+		
+		report.log(Status.FAIL, MarkupHelper.createCodeBlock("[RemoteTestNG] detected TestNG version 6.14.3\n" + 
+				"4월 16, 2019 11:30:45 오전 io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0\n" + 
+				"INFO: Detected dialect: W3C\n" + 
+				"[Total TC Count] [test,  test]\n" + 
+				"[Current TC] ./Resource/TestScripts/SODA/test.robot123123123123123123123"));
+
+		report.addScreenCaptureFromPath("123 : ", "/Users/juneahn/git/m_blia/Resource/TestImage/FailingImg/joined1.png");
+		report.addScreenCaptureFromPath("/Users/juneahn/git/m_blia/Resource/TestImage/FailingImg/joined1.png");
+		
+		extent.flush();
+	}
+	public static void test2() throws Exception {
+		extent = ExtentManager.GetExtent();
+		ExtentTest report = extent.createTest("TestCase1");
+		
+		String img1 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/5023a6e799c54a00b257ed033cc22ae0.png";
+		String img2 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/54129663b0e04a6ea1011e70969d68e6.png";
+		String img3 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/10280a0cff8a43e890108bf56c696981.png";
+		String img4 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/cf65e44a44444a56b0c06d62cd8f0091.png";
+		String img5 = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/64302820928a4a5296acaaf7abc0d99f.png";
+		String test = "/Users/juneahn/git/m_blia/Resource/TestImage/ElementImg/0322bfe7d5f34d7ca4b26e5d780f433a.png";
+		
+		report.pass("[Touch] 권한 허용하기 <br/> "
+				+ "<img src=\"" + test + "\" width=\"25%\" height=\"25%\">");
+		report.pass("[Touch] 허용", MediaEntityBuilder.createScreenCaptureFromPath(img2).build());
+		report.pass("[Touch] ", MediaEntityBuilder.createScreenCaptureFromPath(img3).build());
+		report.pass("[Touch] 다음", MediaEntityBuilder.createScreenCaptureFromPath(img4).build());
+		report.pass("[Touch] 불필요한 앱 (선택 권장)", MediaEntityBuilder.createScreenCaptureFromPath(img5).build());
+		
+		report.log(Status.FAIL, "123123</br> aaa </br> bbb");
+		
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.RED));
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.BLACK));
+		report.log(Status.FAIL, MarkupHelper.createLabel("Test Case Failed", ExtentColor.GREEN));
+		
+		String[][] arr = {{"1","2"}, {"3","4"},{"5","6"}};
+		report.log(Status.FAIL, MarkupHelper.createTable(arr));
+		
+		report.log(Status.FAIL, MarkupHelper.createCodeBlock("[RemoteTestNG] detected TestNG version 6.14.3\n" + 
+				"4월 16, 2019 11:30:45 오전 io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0\n" + 
+				"INFO: Detected dialect: W3C\n" + 
+				"[Total TC Count] [test,  test]\n" + 
+				"[Current TC] ./Resource/TestScripts/SODA/test.robot123123123123123123123"));
+
+		report.addScreenCaptureFromPath("123 : ", "/Users/juneahn/git/m_blia/Resource/TestImage/FailingImg/joined1.png");
+		report.addScreenCaptureFromPath("/Users/juneahn/git/m_blia/Resource/TestImage/FailingImg/joined1.png");
+		
+		extent.flush();
+	}
+}

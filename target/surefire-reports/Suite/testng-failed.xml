@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]" parallel="tests">
+  <test thread-count="2" verbose="0" name="ESAND12(failed)" parallel="tests">
+    <parameter name="noReset" value="false"/>
+    <parameter name="appiumServer" value="http://0.0.0.0:4724/wd/hub"/>
+    <parameter name="deviceName" value="Galaxy Note8"/>
+    <parameter name="testCaseFilePath" value="./Resource/TestScripts/"/>
+    <parameter name="testcase" value="setup_Test"/>
+    <parameter name="twFilePath" value="/Users/juneahn/git/m_blia/Resource/TechniqueWriting/SODA/VMS_Android30_Korea_ko_kr.xml"/>
+    <parameter name="androidHome" value="/Users/juneahn/Library/Android/sdk/platform-tools/adb"/>
+    <parameter name="newCommandTimeout" value="120"/>
+    <parameter name="platformVersion" value="7.1.1"/>
+    <parameter name="automationName" value="UIAutomator2"/>
+    <parameter name="projectName" value="ESAND"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="udid" value="ce071717419d00000c7e"/>
+    <classes>
+      <class name="com.ahnlab.testcase.Testcase2">
+        <methods>
+          <include name="setUp"/>
+          <include name="testMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.ahnlab.testcase.Testcase2 -->
+    </classes>
+  </test> <!-- ESAND12(failed) -->
+  <test thread-count="2" verbose="0" name="ESAND(failed)" parallel="tests">
+    <parameter name="noReset" value="false"/>
+    <parameter name="appiumServer" value="http://0.0.0.0:4723/wd/hub"/>
+    <parameter name="deviceName" value="Pixel 2 XL"/>
+    <parameter name="testCaseFilePath" value="./Resource/TestScripts/"/>
+    <parameter name="testcase" value="setup_Test"/>
+    <parameter name="twFilePath" value="/Users/juneahn/git/m_blia/Resource/TechniqueWriting/SODA/VMS_Android30_Korea_ko_kr.xml"/>
+    <parameter name="androidHome" value="/Users/juneahn/Library/Android/sdk/platform-tools/adb"/>
+    <parameter name="newCommandTimeout" value="120"/>
+    <parameter name="platformVersion" value="9.0"/>
+    <parameter name="automationName" value="UIAutomator2"/>
+    <parameter name="projectName" value="ESAND"/>
+    <parameter name="platformName" value="Android"/>
+    <parameter name="udid" value="710KPLC0272848"/>
+    <classes>
+      <class name="com.ahnlab.testcase.Testcase">
+        <methods>
+          <include name="testMethod"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.ahnlab.testcase.Testcase -->
+    </classes>
+  </test> <!-- ESAND(failed) -->
+</suite> <!-- Failed suite [Suite] -->
